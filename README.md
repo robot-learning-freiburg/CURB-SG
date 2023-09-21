@@ -11,7 +11,7 @@ This repository is the official implementation of the paper:
 > *arXiv preprint arXiv:2309.06635*, 2023
 
 <p align="center">
-  <img src="curb_overview.png" alt="Overview of SPINO approach" width="800" />
+  <img src="./assets/curb_overview.png" alt="Overview of SPINO approach" width="800" />
 </p>
 
 If you find our work useful, please consider citing our paper:
@@ -45,4 +45,11 @@ For any commercial purpose, please contact the authors.
 
 This work was funded by the European Union’s Horizon 2020 research and innovation program grant No 871449-OpenDR and the German Research Foundation (DFG) Emmy Noether Program grant No 468878300.
 <br><br>
-<a href="https://opendr.eu/"><img src="./opendr_logo.png" alt="drawing" width="250"/></a>
+<p float="left">
+  <a href="https://opendr.eu/"><img src="./assets/opendr_logo.png" alt="drawing" height="100"/></a>
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  <a href="https://www.dfg.de/en/research_funding/programmes/individual/emmy_noether/index.html"><img src="./assets/dfg_logo.png" alt="drawing" height="100"/></a>  
+</p>
+
