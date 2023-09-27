@@ -1,5 +1,5 @@
 # CURB-SG: Collaborative Dynamic 3D Scene Graphs for Automated Driving
-[**arXiv**](https://arxiv.org/abs/2309.06635) | [**Website**](http://curb.cs.uni-freiburg.de/) | [**Video**](https://www.youtube.com/watch?v=3xY0U33CSJ4)
+[**arXiv**](https://arxiv.org/abs/2309.06635) | [**Website**](http://curb.cs.uni-freiburg.de/) | [**Video**](https://www.youtube.com/watch?v=qbzQNz7_i8c)
 
 This repository is the official implementation of the paper:
 
