@@ -7,12 +7,11 @@ This repository is the official implementation of the paper:
 >
 > [Elias Greve]()&ast;, [Martin Büchner](https://rl.uni-freiburg.de/people/buechner)&ast;, [Niclas Vödisch](https://vniclas.github.io/)&ast;, [Wolfram Burgard](https://www.utn.de/person/wolfram-burgard/), and [Abhinav Valada](https://rl.uni-freiburg.de/people/valada). <br>
 > &ast;Equal contribution. <br> 
-> 
+> *IEEE International Conference on Robotics and Automation (ICRA)*, 2024 <br>
 > *arXiv preprint arXiv:2309.06635*, 2023 <br>
-> (Accepted for *IEEE International Conference on Robotics and Automation (ICRA)*, 2024.)
 
 <p align="center">
-  <img src="./assets/curb_overview.png" alt="Overview of SPINO approach" width="800" />
+  <img src="./assets/curb_overview.png" alt="Overview of CURB-SG approach" width="800" />
 </p>
 
 If you find our work useful, please consider citing our paper:
@@ -34,6 +33,19 @@ Maps have played an indispensable role in enabling safe and automated driving. A
 ## 👩‍💻 Code
 
 We will release the code upon the acceptance of our paper.
+
+## 🖼️ Sample Data
+We provide two rosbags as sample data for download. The first one contains the construction of the CURB-SG representation throughout exploration using multiple agents while the second one contains a fully explored scene graph:
+<p align="center">
+  <img src="./assets/sample-data.png" alt="Overview of CURB-SG approach" width="800" />
+</p>
+
+```
+wget aisdatasets.cs.uni-freiburg.de/curb-sg/curb-sg-progress.bag
+wget aisdatasets.cs.uni-freiburg.de/curb-sg/curb-sg-final.bag
+```
+
+
 
 
 ## 👩‍⚖️  License
