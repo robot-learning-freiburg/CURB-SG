@@ -1,0 +1,27 @@
+<package format="2">
+
+  <name>rviz_cinematographer_gui</name>
+  <version>0.0.0</version>
+  <description>Manipulate the rviz camera using trajectories and record the resulting views. </description>
+  <maintainer email="razlaw@ais.uni-bonn.de">Jan Razlaw</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>eigen</depend>
+  <depend>interactive_markers</depend>
+  <depend>nav_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>rqt_gui</depend>
+  <depend>rqt_gui_cpp</depend>
+  <depend>tf</depend>
+  <depend>rviz_cinematographer_msgs</depend>
+  <depend>rviz_cinematographer_view_controller</depend>
+  <depend>video_recorder</depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <rqt_gui plugin="${prefix}/plugin.xml"/>
+  </export>
+  <!-- Other tools can request additional information be placed here -->
+
+</package>

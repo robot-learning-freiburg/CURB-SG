@@ -1,0 +1,11 @@
+*/cmake-build-debug/
+*/cmake-build-relwithdebinfo/
+cmake-build-debug/
+html/
+latex/
+.idea
+*/.idea/
+*~
+*.directory
+*.kdev4
+*.orig

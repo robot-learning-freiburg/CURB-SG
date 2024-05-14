@@ -7,11 +7,12 @@ This repository is the official implementation of the paper:
 >
 > [Elias Greve]()&ast;, [Martin Büchner](https://rl.uni-freiburg.de/people/buechner)&ast;, [Niclas Vödisch](https://vniclas.github.io/)&ast;, [Wolfram Burgard](https://www.utn.de/person/wolfram-burgard/), and [Abhinav Valada](https://rl.uni-freiburg.de/people/valada). <br>
 > &ast;Equal contribution. <br> 
-> *IEEE International Conference on Robotics and Automation (ICRA)*, 2024 <br>
+> 
 > *arXiv preprint arXiv:2309.06635*, 2023 <br>
+> (Accepted for *IEEE International Conference on Robotics and Automation (ICRA)*, 2024.)
 
 <p align="center">
-  <img src="./assets/curb_overview.png" alt="Overview of CURB-SG approach" width="800" />
+  <img src="./assets/curb_overview.png" alt="Overview of SPINO approach" width="800" />
 </p>
 
 If you find our work useful, please consider citing our paper:
@@ -32,20 +33,75 @@ Maps have played an indispensable role in enabling safe and automated driving. A
 
 ## 👩‍💻 Code
 
-We will release the code upon the acceptance of our paper.
+### 🏗 Setup
+
+1. Create conda environment: `conda create --name curb python=3.8`
+2. Activate environment: `conda activate curb`
+3. Install dependencies: `pip install -r requirements.txt`
+4. Setup the ros environment:
+- set up ROS NOETIC on Ubuntu 20.04: `sudo apt-get install ros-noetic-geodesy ros-noetic-pcl-ros ros-noetic-nmea-msgs ros-noetic-libg2o`
+- `sudo apt-get install python3-rospy` 
+- `sudo apt-get install ros-noetic-jsk-recognition-msgs`
+- `sudo apt-get install ros-noetic-jsk-rviz-plugins`
+
+5. Clone the project and its submodules:
+- `git clone --recurse-submodules -j8 https://github.com/robot-learning-freiburg/CURB-SG.git`
+
+- Add to ~/.bashrc:
+    ```
+    # set PATH so it includes user's private bin if it exists
+    if [ -d "$HOME/.local/bin" ] ; then
+        PATH="$HOME/.local/bin:$PATH"
+    fi
+    source /opt/ros/noetic/setup.bash
+    export $PYTHONPATH:$PYTHONPATH:/home/$USER/collaborative_panoptic_mapping/
+    ```
+
+6. Build the project:
+- `cd collaborative_panoptic_mapping/catkin_ws/src`
+- `catkin_make -DCMAKE_BUILD_TYPE=RELEASE`
+
+### :rocket: Run 
+
+Each command in a different console to keep the process observable:
+- Start Carla simulator `cd /path-to-carla/carla-simulator/ && ./CarlaUE4.sh`
+- Start ros core `roscore`
+- Start the bride to transmit the sensors of the carla cars into ros messages `python carla_interface/carla2curb.py` (The parameters for the simulation can be set within the python file. It must be restarted to reset the simulation.)
+
+All following commands must be in terminals with a preliminary `source catkin_ws/devel/setup.bash`
+
+- Start the divider node that separates the dynamic classes from the static ones `rosrun hdl_graph_slam pcl_divider_node false` (true to add gaussian noise on all LiDAR points)
+- Start the map server: `roslaunch hdl_graph_slam map_server.launch`
+- Start the agents: `roslaunch hdl_graph_slam hdl1.launch agent_no:=0` for the next ones 1,2.. (remember to set the correct number of agents in the carla2curb.py file before starting it)
+- Start the visualisation: `rviz -d src/hdl_graph_slam/rviz/map.rviz`
+
+All following commands are within the `python_nodes` folder:
+
+- Start the node to compute the lane graph `python node_lane_graph.py`
+- Start the node to visualize the observed vehicles on the lane graph `python node_vehicle_on_lanegraph.py`
+- Start the node to separate the different semantic layers `python node_layered_map.py`
+- Start the node to cluster the detected poles and street signs `python node_cluster_pole`.py`
+- Start the node to build the final graph edges `python abstract_graph_edges.py`
+
+For each run, it is crucial to restart all ROS nodes and processes. Additionally, ensure to start the agents in the specified order after the map server has been initiated.
+
 
 ## 🖼️ Sample Data
-We provide two rosbags as sample data for download. The first one contains the construction of the CURB-SG representation throughout exploration using multiple agents while the second one contains a fully explored scene graph:
+We provide two rosbags as sample data for download. 
+
 <p align="center">
   <img src="./assets/sample-data.png" alt="Overview of CURB-SG approach" width="800" />
 </p>
 
+The first sample data includes the final result of a Carla town simulation, and to view these results, it is sufficient to have the RViz preset active before playing the ROSbag. 
 ```
-wget aisdatasets.cs.uni-freiburg.de/curb-sg/curb-sg-progress.bag
 wget aisdatasets.cs.uni-freiburg.de/curb-sg/curb-sg-final.bag
 ```
+The second sample data consists of a recorded ROSbag containing the vehicle sensor data necessary to operate the complete system independently of a Carla instance. In this setup, the Carla2Curb interface is not required. Simply play the ROSbag, then initiate the map server, agents, and Python nodes in that order. The outcomes will be visible in RViz.
 
-
+```
+wget aisdatasets.cs.uni-freiburg.de/curb-sg/curb-sg-progress.bag
+```
 
 
 ## 👩‍⚖️  License

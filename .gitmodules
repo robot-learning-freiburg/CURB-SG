@@ -1,0 +1,9 @@
+[submodule "catkin_ws/src/rviz_plugins"]
+	path = catkin_ws/src/rviz_plugins
+	url = https://github.com/vniclas/rviz-plugins
+[submodule "catkin_ws/src/fast_gicp"]
+	path = catkin_ws/src/fast_gicp
+	url = https://github.com/elias-greve/fast_gicp.git
+[submodule "catkin_ws/src/ndt_omp"]
+	path = catkin_ws/src/ndt_omp
+	url = https://github.com/elias-greve/ndt_omp.git

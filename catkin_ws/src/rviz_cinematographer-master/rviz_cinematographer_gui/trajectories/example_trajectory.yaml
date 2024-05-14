@@ -1,0 +1,121 @@
+rviz_cinematographer_camera_poses:
+  -
+    position:
+      x: 32.144928
+      y: -8.590231
+      z: 29.106354
+    orientation:
+      x: 0.038422
+      y: 0.418488
+      z: -0.082962
+      w: 0.903609
+    transition_duration: 0.000000
+    wait_duration: 0.000000
+  -
+    position:
+      x: 33.510000
+      y: 2.540000
+      z: 32.020000
+    orientation:
+      x: 0.000000
+      y: 0.390000
+      z: 0.170000
+      w: 0.910000
+    transition_duration: 2.000000
+    wait_duration: 0.000000
+  -
+    position:
+      x: 33.210000
+      y: 9.460000
+      z: 35.070000
+    orientation:
+      x: -0.110000
+      y: 0.390000
+      z: 0.250000
+      w: 0.880000
+    transition_duration: 3.000000
+    wait_duration: 2.000000
+  -
+    position:
+      x: 23.421434
+      y: 2.362239
+      z: 25.427446
+    orientation:
+      x: -0.462798
+      y: 0.043255
+      z: -0.680205
+      w: 0.566818
+    transition_duration: 0.500000
+    wait_duration: 0.000000
+  -
+    position:
+      x: 14.333460
+      y: -3.120000
+      z: 12.149205
+    orientation:
+      x: -0.119565
+      y: 0.308493
+      z: 0.219474
+      w: 0.917809
+    transition_duration: 0.500000
+    wait_duration: 0.000000
+  -
+    position:
+      x: 6.357055
+      y: -5.430411
+      z: 0.216421
+    orientation:
+      x: 0.023981
+      y: 0.694683
+      z: 0.056601
+      w: 0.716692
+    transition_duration: 0.500000
+    wait_duration: 0.000000
+  -
+    position:
+      x: -3.331516
+      y: -5.160868
+      z: 1.470000
+    orientation:
+      x: 0.575150
+      y: 0.298083
+      z: -0.676190
+      w: 0.350450
+    transition_duration: 0.500000
+    wait_duration: 0.000000
+  -
+    position:
+      x: -9.513605
+      y: 4.210270
+      z: 1.528230
+    orientation:
+      x: -0.641278
+      y: 0.135753
+      z: 0.738636
+      w: 0.156363
+    transition_duration: 1.000000
+    wait_duration: 0.000000
+  -
+    position:
+      x: -2.029551
+      y: 11.110476
+      z: 1.330000
+    orientation:
+      x: -0.515809
+      y: 0.435489
+      z: 0.563716
+      w: 0.475936
+    transition_duration: 1.000000
+    wait_duration: 0.000000
+  -
+    position:
+      x: 7.140000
+      y: 7.060000
+      z: 1.330000
+    orientation:
+      x: -0.260000
+      y: 0.640000
+      z: 0.270000
+      w: 0.670000
+    transition_duration: 1.000000
+    wait_duration: 0.000000

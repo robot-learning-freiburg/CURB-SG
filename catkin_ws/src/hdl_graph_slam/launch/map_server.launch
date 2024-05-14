@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- arguments -->
+  <arg name="nodelet_manager" default="map_server_nodelet_manager" />
+  <arg name="map_server_topic" default="/map_server" />
+  <arg name="dynamic_observation_topic" default="/dynamic_observation" />
+
+    <arg name="enable_floor_detection" default="true" />
+    <arg name="enable_gps" default="false" />
+    <arg name="enable_imu_acc" default="false" />
+    <arg name="enable_imu_ori" default="false" />
+    <arg name="map_frame_id" default="map_s" />
+
+  <node pkg="nodelet" type="nodelet" name="$(arg nodelet_manager)" args="manager" output="screen"/>
+
+  <!-- map server_nodelet -->
+  <node pkg="nodelet" type="nodelet" name="map_server" args="load hdl_graph_slam/MapServerNodelet $(arg nodelet_manager)"
+        launch-prefix="gdb -ex run --args">
+        <!-- launch-prefix="valgrind - -leak-check=full - -show-leak-kinds=all -s" -->
+    <param name="map_server_topic" value="$(arg map_server_topic)" />
+    <param name="map_frame_id" value="$(arg map_frame_id)" />
+    <param name="dynamic_observation_topic" value="$(arg dynamic_observation_topic)" />
+    <param name="observation_filter_topic" value="/observation_filter" />
+    <param name="height_offset_keyframes" value="12.0" />
+    <param name="exit_when_map_explored" value="false" type="bool"/>
+<!--     <param name="exit_number_of_map_points" value="140000.0" /> -->
+<!--     <param name="exit_number_of_map_points" value="2000.0" /> -->
+    <param name="exit_number_of_map_points" value="900000.0" />
+    <param name="exit_iterations" value="5" />
+
+    <!-- optimization params -->
+    <!-- typical solvers: gn_var, gn_fix6_3, gn_var_cholmod, lm_var, lm_fix6_3, lm_var_cholmod, ... -->
+    <param name="g2o_solver_type" value="lm_var_cholmod" />
+    <param name="g2o_solver_num_iterations" value="512" />
+
+    <!-- loop closure params -->
+    <param name="distance_thresh" value="15.0" />
+    <param name="accum_distance_thresh" value="25.0" />
+    <param name="min_edge_interval" value="3.0" />
+    <param name="fitness_score_thresh" value="2.5" />
+
+    <!-- robust kernels: NONE, Cauchy, DCS, Fair, GemanMcClure, Huber, PseudoHuber, Saturated, Tukey, Welsch -->
+    <param name="odometry_edge_robust_kernel" value="NONE" />
+    <param name="odometry_edge_robust_kernel_size" value="1.0" />
+    <param name="loop_closure_edge_robust_kernel" value="Huber" />
+    <param name="loop_closure_edge_robust_kernel_size" value="1.0" />
+    <param name="use_const_inf_matrix" value="false" />
+    <param name="const_stddev_x" value="0.5" />
+    <param name="const_stddev_q" value="0.1" />
+    <param name="var_gain_a" value="20.0" />
+    <param name="min_stddev_x" value="0.1" />
+    <param name="max_stddev_x" value="5.0" />
+    <param name="min_stddev_q" value="0.05" />
+    <param name="max_stddev_q" value="0.2" />
+
+    <param name="registration_method" value="FAST_GICP" />
+    <!-- update params -->
+    <param name="graph_update_interval" value="3.0" />
+    <param name="map_cloud_update_interval" value="10.0" />
+    <param name="map_cloud_resolution_rough" value="0.5" />
+    <param name="map_cloud_resolution_medium" value="0.5" />
+    <param name="map_cloud_resolution_fine" value="0.15" />
+  </node>
+
+</launch>
