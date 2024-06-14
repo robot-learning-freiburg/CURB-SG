@@ -112,6 +112,8 @@ For any commercial purpose, please contact the authors.
 
 ## 🙏 Acknowledgment
 
+We thank Kenji Koide for open-sourcing the ROS package [hdl_graph_slam](https://github.com/koide3/hdl_graph_slam) that we use as base for our multi-agent LiDAR SLAM framework.
+
 This work was funded by the European Union’s Horizon 2020 research and innovation program grant No 871449-OpenDR and the German Research Foundation (DFG) Emmy Noether Program grant No 468878300.
 <br><br>
 <p float="left">
