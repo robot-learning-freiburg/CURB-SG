@@ -8,7 +8,7 @@ This repository is the official implementation of the paper:
 > [Elias Greve]()&ast;, [Martin Büchner](https://rl.uni-freiburg.de/people/buechner)&ast;, [Niclas Vödisch](https://vniclas.github.io/)&ast;, [Wolfram Burgard](https://www.utn.de/person/wolfram-burgard/), and [Abhinav Valada](https://rl.uni-freiburg.de/people/valada). <br>
 > &ast;Equal contribution. <br> 
 > 
-> IEEE International Conference on Robotics and Automation (ICRA), 2024.
+> *IEEE International Conference on Robotics and Automation (ICRA)*, 2024
 
 <p align="center">
   <img src="./assets/curb_overview.png" alt="Overview of SPINO approach" width="800" />
@@ -16,11 +16,12 @@ This repository is the official implementation of the paper:
 
 If you find our work useful, please consider citing our paper:
 ```
-@article{greve2023curb,
-  title={Collaborative Dynamic 3D Scene Graphs for Automated Driving},
-  author={Greve, Elias and Büchner, Martin and Vödisch, Niclas and Burgard, Wolfram and Valada, Abhinav},
-  journal={arXiv preprint arXiv:2309.06635},
-  year={2023}
+@inproceedings{greve2024curb,
+    title={Collaborative Dynamic 3D Scene Graphs for Automated Driving},
+    author={Greve, Elias and Büchner, Martin and Vödisch, Niclas and Burgard, Wolfram and Valada, Abhinav},
+    booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
+    year={2024},
+    pages={11118-11124}
 }
 ```
 
