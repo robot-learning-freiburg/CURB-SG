@@ -1,5 +1,5 @@
 # CURB-SG
-[**arXiv**](https://arxiv.org/abs/2309.06635) | [**Website**](http://curb.cs.uni-freiburg.de/) | [**Video**](https://www.youtube.com/watch?v=qbzQNz7_i8c)
+[**arXiv**](https://arxiv.org/abs/2309.06635) | [**IEEE Xplore**](https://ieeexplore.ieee.org/document/10610112) | [**Website**](http://curb.cs.uni-freiburg.de/) | [**Video**](https://www.youtube.com/watch?v=qbzQNz7_i8c)
 
 This repository is the official implementation of the paper:
 
