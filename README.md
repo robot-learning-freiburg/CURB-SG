@@ -11,7 +11,7 @@ This repository is the official implementation of the paper:
 > *IEEE International Conference on Robotics and Automation (ICRA)*, 2024
 
 <p align="center">
-  <img src="./assets/curb_overview.png" alt="Overview of SPINO approach" width="800" />
+  <img src="./assets/curb_overview.png" alt="Overview of CURB-SG approach" width="800" />
 </p>
 
 If you find our work useful, please consider citing our paper:
