@@ -25,6 +25,8 @@ If you find our work useful, please consider citing our paper:
 }
 ```
 
+**Make sure to also check out our follow-up work on this topic:** [**CURB-OSG**](https://github.com/robot-learning-freiburg/CURB-OSG).
+
 
 ## 📔 Abstract
 
